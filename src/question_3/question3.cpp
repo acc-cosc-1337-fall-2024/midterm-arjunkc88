@@ -1,10 +1,14 @@
 #include "question3.h"
+using namespace std;
 
-bool test_config()
 
-std::string transcribe_dna_into_rna(const std::string& dna) 
+bool test_config(){
+    return true;
+}
+
+string transcribe_dna_into_rna(const string& dna) 
 {
-    std::string rna;
+    string rna;
     for (char nucleotide : dna)
      {
         if (nucleotide == 'T')

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "question2.h"
+using namespace std;
 
 int main() 
 {
@@ -8,20 +9,20 @@ int main()
 
     do
      {
-        std::cout << "Enter an integer value (1-512): ";
-        std::cin >> decimal;
+        cout << "Enter an integer value (1-512): ";
+        cin >> decimal;
 
         if (decimal < 1 || decimal > 512)
          {
-            std::cout << "Invalid input. Please enter a value between 1 and 512." << std::endl;
+            cout << "Invalid input. Please enter a value between 1 and 512." << endl;
             continue;
         }
 
-        std::string hex = decimal_to_hex(decimal);
-        std::cout << "The hexadecimal representation is: " << hex << std::endl;
+        string hex = decimal_to_hex(decimal);
+        cout << "The hexadecimal representation is: " << hex << endl;
 
-        std::cout << "Do you want to convert another value? (y/n): ";
-        std::cin >> choice;
+        cout << "Do you want to convert another value? (y/n): ";
+        cin >> choice;
     } while (choice == 'y' || choice == 'Y');
 
     return 0;

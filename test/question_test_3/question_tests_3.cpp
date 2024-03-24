@@ -10,23 +10,8 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
-#include "question3.h"
-#include <iostream>
 
-int main()
- {
-    std::string dna = "GATGGAACTTGACTACGTAAATT";
-    std::string expected_rna = "GAUGGAACUUGACUACGUAAAUU";
-    std::string actual_rna = transcribe_dna_into_rna(dna);
-
-    if (actual_rna == expected_rna)
-	 {
-        std::cout << "Test passed." << std::endl;
-    } else {
-        std::cout << "Test failed: Expected " << expected_rna << ", but got " << actual_rna << std::endl;
-    }
-
-    return 0;
+TEST_CASE("Test DNA RNA", "[transcribe_dna_into_rna]") 
+{
+    REQUIRE(transcribe_dna_into_rna("GATGGAACTTGACTACGTAAATT") == "GAUGGAACUUGACUACGUAAAUU");  
 }
-
-

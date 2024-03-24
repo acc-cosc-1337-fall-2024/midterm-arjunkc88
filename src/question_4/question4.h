@@ -1,7 +1,8 @@
-//
-bool test_config();
+ bool test_config();
+ 
+ #include <string>
+using namespace std;
 
-
-double get_fahrenheit(double c);
+ double get_fahrenheit(double c);
 
 

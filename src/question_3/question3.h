@@ -1,7 +1,7 @@
 bool test_config();
 
 #include <string>
-
+using namespace std;
 // Function to transcribe DNA into RNA
-std::string transcribe_dna_into_rna(const std::string& dna);
+string transcribe_dna_into_rna(const string& dna);
 

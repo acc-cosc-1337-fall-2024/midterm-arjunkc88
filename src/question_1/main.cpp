@@ -1,54 +1,32 @@
 #include <iostream>
+using namespace std;
 #include "question1.h"
-#include <cmath> // For pow function
 
-double get_kinetic_energy(double mass, double velocity)
- {
-  // Check for non-negative mass
-  if (mass <= 0) 
-  {
-    std::cerr << "Error: Mass must be positive." << std::endl;
-    return -1;
-  }
 
-  // Kinetic energy formula
-  return 0.5 * mass * pow(velocity, 2);
-}
-
-int main() 
+int main()
 {
-  double mass, velocity;
+    double mass, velocity;
+    char repeat;
+    while(true){
+        cout<< "Give the mass: ";
+        cin >> mass;
 
-  while (true) 
-  {
-    // Prompt for user input
-    std::cout << "Enter object mass (kg): ";
-    std::cin >> mass;
+        cout<< "Give the velocity: ";
+        cin >> velocity;
 
-    std::cout << "Enter object velocity (m/s): ";
-    std::cin >> velocity;
+        double KE;
+        KE = get_kinetic_energy(mass, velocity);
 
-    // Calculate kinetic energy
-    double kinetic_energy = get_kinetic_energy(mass, velocity);
+        cout<< "This is the KE: " << KE << endl;
 
-    // Check for valid input and handle error from function
-    if (kinetic_energy >= 0) 
-    {
-      // Display result
-      std::cout << "Kinetic energy: " << kinetic_energy << " J" << std::endl;
-    } else {
-      std::cerr << "Error: An error occurred while calculating kinetic energy." << std::endl;
+        cout<< "Do you want to continue? (y/n)" << endl;
+        cin >> repeat;
+
+        if (tolower(repeat) == 'n')
+        {
+            break;
+        }
+        
     }
-
-    // Prompt to continue
-    char choice;
-    std::cout << "Continue (y/n)? ";
-    std::cin >> choice;
-    if (tolower(choice) != 'y') 
-    {
-      break;
-    }
-  }
-
-  return 0;
+    return 0;
 }
